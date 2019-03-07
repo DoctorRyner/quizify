@@ -5,8 +5,10 @@ import System.Process (system)
 import qualified Config
 
 mogrify :: String -> String -> String -> String
-mogrify targetColor srcColor mask =
-    "mogrify -fill " ++ "'" ++ targetColor ++ "'" ++ " -opaque " ++ "'" ++ srcColor ++ "' " ++ mask
+mogrify targetColor sourceColor mask =
+    "mogrify -fill " ++ "'" ++ target ++ "'" ++ " -opaque " ++ "'" ++ source ++ "' " ++ mask
+  where target = if head targetColor /= '#' then "#" else "" ++ targetColor
+        source = if head sourceColor /= '#' then "#" else "" ++ sourceColor
 
 quizify :: String -> Bool -> FilePath -> FilePath -> IO ()
 quizify accentColor isDark imageSource dist = system cmd >> pure ()
