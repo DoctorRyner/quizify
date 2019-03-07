@@ -2,6 +2,7 @@
 module Main where
 
 import qualified Config
+import           Data.ByteString    (ByteString)
 import           Data.Text          (Text)
 import qualified Data.Text          as Text
 import           Json
@@ -20,8 +21,8 @@ mogrify targetColor sourceColor mask =
   where target = colorify targetColor
         source = colorify sourceColor
 
-makeConfig :: String -> String -> String
-makeConfig accentColor lightOrDarkColor = show $ json
+makeConfig :: String -> String -> ByteString
+makeConfig accentColor lightOrDarkColor = json
     [ "accentColor"  |: str (colorifyText accentColor)
     , "lightOrDark"  |: str (colorifyText lightOrDarkColor)
     , "isRoundStyle" |: bool False
@@ -32,9 +33,10 @@ makeConfig accentColor lightOrDarkColor = show $ json
 quizify :: String -> Bool -> FilePath -> FilePath -> IO ()
 quizify accentColor isDark imageSource dist = do
     _ <- system cmd
-    writeFile
+    Json.writeJson
         (dist ++ "../locales/config.json")
-        (makeConfig accentColor (if isDark then Config.darkColor else Config.lightColor))
+        (makeConfig accentColor (if isDark then Config.darkColor else Config.lightColor)
+        )
   where
     distMask = dist ++ "/*.{jpg,png}"
     cmd = init . init . init $ concatMap (++ " && ")

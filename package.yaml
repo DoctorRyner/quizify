@@ -5,6 +5,7 @@ github:              "https://github.com/DoctorRyner/quizify"
 dependencies:
 - base >= 4.7 && < 5
 - aeson
+- aeson-pretty
 - bytestring
 - text
 - scientific

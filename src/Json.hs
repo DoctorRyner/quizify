@@ -1,11 +1,13 @@
 module Json where
 
-import qualified Data.Aeson           as Json
-import           Data.Aeson.Types     (Pair)
-import           Data.ByteString      (ByteString)
-import qualified Data.ByteString.Lazy as BSLazy
-import           Data.Scientific      (Scientific)
-import           Data.Text            (Text)
+import qualified Data.Aeson               as Json
+import qualified Data.Aeson.Encode.Pretty as JsonPretty
+import           Data.Aeson.Types         (Pair)
+import           Data.ByteString          (ByteString)
+import qualified Data.ByteString          as BS
+import qualified Data.ByteString.Lazy     as BSLazy
+import           Data.Scientific          (Scientific)
+import           Data.Text                (Text)
 
 obj :: [Pair] -> Json.Value
 obj = Json.object
@@ -20,7 +22,10 @@ num :: Scientific -> Json.Value
 num = Json.Number
 
 json :: [Pair] -> ByteString
-json = BSLazy.toStrict . Json.encode . Json.object
+json = BSLazy.toStrict . JsonPretty.encodePretty . Json.object
+
+writeJson :: FilePath -> ByteString -> IO ()
+writeJson path src = BS.writeFile path src
 
 bool :: Bool -> Json.Value
 bool = Json.Bool
