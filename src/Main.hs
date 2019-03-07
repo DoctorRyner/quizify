@@ -18,7 +18,7 @@ quizify accentColor isDark imageSource dist = system cmd >> pure ()
         , "cp -r " ++ imageSource ++ "/ " ++ dist
         , mogrify accentColor Config.lightColor distMask
         , if not isDark
-            then mogrify Config.darkColor Config.lightColor distMask
+            then mogrify Config.lightColor Config.darkColor distMask
             else "echo 'FINISH!'"
         ]
 
