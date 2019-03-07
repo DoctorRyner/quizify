@@ -7,11 +7,11 @@ import qualified Config
 mogrify :: String -> String -> String -> String
 mogrify targetColor sourceColor mask =
     "mogrify -fill " ++ "'" ++ target ++ "'" ++ " -opaque " ++ "'" ++ source ++ "' " ++ mask
-  where target = if head targetColor /= '#' then "#" else "" ++ targetColor
-        source = if head sourceColor /= '#' then "#" else "" ++ sourceColor
+  where target = (if head targetColor /= '#' then "#" else "") ++ targetColor
+        source = (if head sourceColor /= '#' then "#" else "") ++ sourceColor
 
 quizify :: String -> Bool -> FilePath -> FilePath -> IO ()
-quizify accentColor isDark imageSource dist = system cmd >> pure ()
+quizify accentColor isDark imageSource dist = system cmd >> putStrLn cmd >> pure ()
   where
     distMask = dist ++ "/*.{jpg,png}"
     cmd = init . init . init $ concatMap (++ " && ")
