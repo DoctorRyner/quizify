@@ -33,7 +33,7 @@ quizify :: String -> Bool -> FilePath -> FilePath -> IO ()
 quizify accentColor isDark imageSource dist = do
     _ <- system cmd
     writeFile
-        (dist ++ "../locales/config.yaml")
+        (dist ++ "../locales/config.json")
         (makeConfig accentColor (if isDark then Config.darkColor else Config.lightColor))
   where
     distMask = dist ++ "/*.{jpg,png}"
