@@ -11,6 +11,17 @@
   (major1) == 0 && (major2) == 1 && (minor) <= 0)
 #endif /* MIN_VERSION_quizify */
 
+/* package aeson-1.4.2.0 */
+#ifndef VERSION_aeson
+#define VERSION_aeson "1.4.2.0"
+#endif /* VERSION_aeson */
+#ifndef MIN_VERSION_aeson
+#define MIN_VERSION_aeson(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  4 || \
+  (major1) == 1 && (major2) == 4 && (minor) <= 2)
+#endif /* MIN_VERSION_aeson */
+
 /* package base-4.12.0.0 */
 #ifndef VERSION_base
 #define VERSION_base "4.12.0.0"
@@ -21,6 +32,50 @@
   (major1) == 4 && (major2) <  12 || \
   (major1) == 4 && (major2) == 12 && (minor) <= 0)
 #endif /* MIN_VERSION_base */
+
+/* package bytestring-0.10.8.2 */
+#ifndef VERSION_bytestring
+#define VERSION_bytestring "0.10.8.2"
+#endif /* VERSION_bytestring */
+#ifndef MIN_VERSION_bytestring
+#define MIN_VERSION_bytestring(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  10 || \
+  (major1) == 0 && (major2) == 10 && (minor) <= 8)
+#endif /* MIN_VERSION_bytestring */
+
+/* package process-1.6.3.0 */
+#ifndef VERSION_process
+#define VERSION_process "1.6.3.0"
+#endif /* VERSION_process */
+#ifndef MIN_VERSION_process
+#define MIN_VERSION_process(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  6 || \
+  (major1) == 1 && (major2) == 6 && (minor) <= 3)
+#endif /* MIN_VERSION_process */
+
+/* package scientific-0.3.6.2 */
+#ifndef VERSION_scientific
+#define VERSION_scientific "0.3.6.2"
+#endif /* VERSION_scientific */
+#ifndef MIN_VERSION_scientific
+#define MIN_VERSION_scientific(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  3 || \
+  (major1) == 0 && (major2) == 3 && (minor) <= 6)
+#endif /* MIN_VERSION_scientific */
+
+/* package text-1.2.3.1 */
+#ifndef VERSION_text
+#define VERSION_text "1.2.3.1"
+#endif /* VERSION_text */
+#ifndef MIN_VERSION_text
+#define MIN_VERSION_text(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  2 || \
+  (major1) == 1 && (major2) == 2 && (minor) <= 3)
+#endif /* MIN_VERSION_text */
 
 /* tool alex-3.2.1 */
 #ifndef TOOL_VERSION_alex
@@ -133,7 +188,7 @@
 #endif /* MIN_TOOL_VERSION_runghc */
 
 #ifndef CURRENT_COMPONENT_ID
-#define CURRENT_COMPONENT_ID "quizify-0.1-D3qlN5e8Qcy1uTFzekPdjA-quizify-exe"
+#define CURRENT_COMPONENT_ID "quizify-0.1-3YZxO61XxQF8MtmrEX8L7j-quizify-exe"
 #endif /* CURRENT_COMPONENT_ID */
 #ifndef CURRENT_PACKAGE_VERSION
 #define CURRENT_PACKAGE_VERSION "0.1"

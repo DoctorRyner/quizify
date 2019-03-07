@@ -1,5 +1,12 @@
+let:
+  - bin: $(stack path --local-install-root)/bin/
+
 default: sae buildDebug
 
 buildDebug: stack build --fast
 
 build: stack build
+
+macDeps: brew install imagemagick
+
+install: cp <bin>/quizify ~/.local/bin

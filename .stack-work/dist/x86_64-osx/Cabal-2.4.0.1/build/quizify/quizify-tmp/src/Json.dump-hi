@@ -1,0 +1,163 @@
+
+==================== FINAL INTERFACE ====================
+2019-03-07 10:34:00.503195 UTC
+
+interface main:Json 8063
+  interface hash: 8589c7e20e3183b84327948fd2be942e
+  ABI hash: 333685ceca0f37cdada4585ff823eaed
+  export-list hash: 188786bd064f56f75353114727decf0e
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 83b5a9d16a88e407d0f198901beabeda
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  plugin_hash: ad164012d6b1e14942349d58b1132007
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Json.arr
+  Json.json
+  Json.num
+  Json.obj
+  Json.str
+module dependencies:
+package dependencies: aeson-1.4.2.0 array-0.5.3.0
+                      attoparsec-0.13.2.2 base-4.12.0.0 base-compat-0.10.5 binary-0.8.6.0
+                      bytestring-0.10.8.2 containers-0.6.0.1 deepseq-1.4.4.0
+                      dlist-0.8.0.5 ghc-boot-th-8.6.3 ghc-prim-0.5.3 hashable-1.2.7.0
+                      integer-gmp-1.0.2.0 integer-logarithms-1.0.2.2 primitive-0.6.4.0
+                      random-1.1 scientific-0.3.6.2 tagged-0.8.6
+                      template-haskell-2.14.0.0 text-1.2.3.1 time-1.8.0.2
+                      time-locale-compat-0.1.1.5 transformers-0.5.5.0
+                      unordered-containers-0.2.9.0 uuid-types-1.0.3 vector-0.12.0.2
+orphans: attoparsec-0.13.2.2:Data.Attoparsec.Text.Internal
+         attoparsec-0.13.2.2:Data.Attoparsec.ByteString.Char8
+         vector-0.12.0.2:Data.Vector.Unboxed
+         time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian
+         vector-0.12.0.2:Data.Vector.Fusion.Bundle
+         hashable-1.2.7.0:Data.Hashable.Generic
+         transformers-0.5.5.0:Control.Monad.Trans.Error
+         text-1.2.3.1:Data.Text.Lazy text-1.2.3.1:Data.Text
+         binary-0.8.6.0:Data.Binary.Generic
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         text-1.2.3.1:Data.Text.Show base-4.12.0.0:GHC.Float
+         base-4.12.0.0:GHC.Base
+family instance modules: aeson-1.4.2.0:Data.Aeson.Types.Internal
+                         attoparsec-0.13.2.2:Data.Attoparsec.Internal.Types
+                         base-4.12.0.0:Control.Applicative base-4.12.0.0:Data.Complex
+                         base-4.12.0.0:Data.Functor.Compose base-4.12.0.0:Data.Functor.Const
+                         base-4.12.0.0:Data.Functor.Identity
+                         base-4.12.0.0:Data.Functor.Product base-4.12.0.0:Data.Functor.Sum
+                         base-4.12.0.0:Data.Monoid base-4.12.0.0:Data.Semigroup
+                         base-4.12.0.0:Data.Semigroup.Internal base-4.12.0.0:Data.Version
+                         base-4.12.0.0:Data.Void base-4.12.0.0:GHC.Exts
+                         base-4.12.0.0:GHC.Generics base-4.12.0.0:GHC.IO.Exception
+                         containers-0.6.0.1:Data.IntMap.Internal
+                         containers-0.6.0.1:Data.IntSet.Internal
+                         containers-0.6.0.1:Data.Map.Internal
+                         containers-0.6.0.1:Data.Sequence.Internal
+                         containers-0.6.0.1:Data.Set.Internal containers-0.6.0.1:Data.Tree
+                         dlist-0.8.0.5:Data.DList ghc-boot-th-8.6.3:GHC.ForeignSrcLang.Type
+                         ghc-boot-th-8.6.3:GHC.LanguageExtensions.Type
+                         primitive-0.6.4.0:Control.Monad.Primitive
+                         primitive-0.6.4.0:Data.Primitive.Array
+                         primitive-0.6.4.0:Data.Primitive.ByteArray
+                         primitive-0.6.4.0:Data.Primitive.PrimArray
+                         primitive-0.6.4.0:Data.Primitive.SmallArray
+                         primitive-0.6.4.0:Data.Primitive.UnliftedArray
+                         tagged-0.8.6:Data.Tagged
+                         template-haskell-2.14.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.3.1:Data.Text text-1.2.3.1:Data.Text.Lazy
+                         unordered-containers-0.2.9.0:Data.HashMap.Base
+                         unordered-containers-0.2.9.0:Data.HashSet
+                         uuid-types-1.0.3:Data.UUID.Types.Internal
+                         uuid-types-1.0.3:Data.UUID.Types.Internal.Builder
+                         vector-0.12.0.2:Data.Vector vector-0.12.0.2:Data.Vector.Primitive
+                         vector-0.12.0.2:Data.Vector.Storable
+                         vector-0.12.0.2:Data.Vector.Unboxed
+                         vector-0.12.0.2:Data.Vector.Unboxed.Base
+import  -/  aeson-1.4.2.0:Data.Aeson 83009ba01d0a62238da85a019d639d2d
+import  -/  aeson-1.4.2.0:Data.Aeson.Types 870e42727f61ef91476bc4e84de1f697
+import  -/  aeson-1.4.2.0:Data.Aeson.Types.Internal 01e401a8fa921330605d1359cd7976f3
+import  -/  base-4.12.0.0:GHC.Base cc906f98291a1b830546e99a96674547
+import  -/  base-4.12.0.0:Prelude 5c01365ec01f83bd405ac01cbb9a8d76
+import  -/  bytestring-0.10.8.2:Data.ByteString 78d682475677f079c6d73a9ebfd11aaa
+import  -/  bytestring-0.10.8.2:Data.ByteString.Internal 7b0dcb7c0831c3ce91065a359792eef6
+import  -/  bytestring-0.10.8.2:Data.ByteString.Lazy 923266e15e88ea8f1d369173312934f2
+import  -/  scientific-0.3.6.2:Data.Scientific 62c85054f4a7aab32f64fcf46ce53efb
+import  -/  text-1.2.3.1:Data.Text 2c90ba06bbfb1ec3d4a10366de64b74a
+import  -/  text-1.2.3.1:Data.Text.Internal f35f3ca76dd689967d20c61a04b86010
+368f32b1d13e6e22dd962a1795911089
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Json.$trModule3 Json.$trModule1) -}
+f71601c47cd7d6fbc11e98d856a24a6d
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Json.$trModule2) -}
+39d4e09de9f900a8aa9b5c8f0d156a13
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Json"#) -}
+6d24fe38af6a154d52bfe4f080a0e6c6
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Json.$trModule4) -}
+3f6b0013de7ad94fbd402710279b98ef
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+907a3ff671c12dbf9d5cab6480fea38e
+  arr ::
+    Data.Aeson.Types.Internal.Array -> Data.Aeson.Types.Internal.Value
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>m2,
+     Unfolding: InlineRule (0, True, True)
+                Data.Aeson.Types.Internal.$WArray -}
+f87b424b838c0d6481010a6991986fdc
+  json ::
+    [Data.Aeson.Types.Internal.Pair]
+    -> Data.ByteString.Internal.ByteString
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ (x :: [Data.Aeson.Types.Internal.Pair]) ->
+                 let {
+                   cs :: Data.ByteString.Lazy.Internal.ByteString
+                   = Data.ByteString.Builder.toLazyByteString
+                       (Json.json_go
+                          x
+                          (Data.HashMap.Base.Empty
+                             @ Data.Text.Internal.Text
+                             @ Data.Aeson.Types.Internal.Value))
+                 } in
+                 Data.ByteString.Lazy.toStrict_goLen0 cs cs) -}
+d4f83a65b6b29d9f7f38e5ce85ddc8be
+  json_go ::
+    [(Data.Text.Internal.Text, Data.Aeson.Types.Internal.Value)]
+    -> Data.HashMap.Base.HashMap
+         Data.Text.Internal.Text Data.Aeson.Types.Internal.Value
+    -> Data.ByteString.Builder.Internal.Builder
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+e1630acf38c820b1e392781ee4d05c16
+  num ::
+    Data.Scientific.Scientific -> Data.Aeson.Types.Internal.Value
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>m4,
+     Unfolding: InlineRule (0, True, True)
+                Data.Aeson.Types.Internal.$WNumber -}
+49699146b92c2e483513a73e9702a167
+  obj ::
+    [Data.Aeson.Types.Internal.Pair] -> Data.Aeson.Types.Internal.Value
+  {- Arity: 1, Strictness: <S,1*U>m1,
+     Unfolding: InlineRule (0, True, True)
+                Data.Aeson.Types.Internal.object -}
+3adbf2542c15925b425c2df34331d3b1
+  str :: Data.Text.Internal.Text -> Data.Aeson.Types.Internal.Value
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>m3,
+     Unfolding: InlineRule (0, True, True)
+                Data.Aeson.Types.Internal.$WString -}
+trusted: none
+require own pkg trusted: False
+module header:
+  Nothing
+declaration docs:
+arg docs:
+

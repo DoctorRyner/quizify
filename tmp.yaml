@@ -1,0 +1,23 @@
+let:
+    - distPath: ~/git/quiz-gui/src/images/
+    - accentColor: \#F3A
+    - dark: \#4A4A4A
+    - light: \#DADADA # it's also accentColorOrigin
+    - lightText: \#FFFFFF
+
+
+default: sae dark
+
+basic: sae msg copy replaceAccentColor
+
+light: sae basic replaceDarkToLight
+dark: sae basic replaceLightToDark
+
+msg: echo 'Replacing colors... It can take come time...'
+
+copy: mkdir -p <distPath> && cp -r images/* <distPath>
+
+replaceAccentColor: mogrify -fill <accentColor> -opaque <light> <distPath>*.{jpg,png}
+
+replaceDarkToLight: mogrify -fill <light> -opaque <dark> <distPath>*.{jpg,png}
+replaceLightToDark: mogrify -fill <dark> -opaque <light> <distPath>*.{jpg,png}

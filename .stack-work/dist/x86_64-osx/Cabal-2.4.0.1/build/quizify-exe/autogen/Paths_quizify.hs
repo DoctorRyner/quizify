@@ -30,7 +30,7 @@ version = Version [0,1] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/Users/local/git/quizify/.stack-work/install/x86_64-osx/lts-13.10/8.6.3/bin"
-libdir     = "/Users/local/git/quizify/.stack-work/install/x86_64-osx/lts-13.10/8.6.3/lib/x86_64-osx-ghc-8.6.3/quizify-0.1-D3qlN5e8Qcy1uTFzekPdjA-quizify-exe"
+libdir     = "/Users/local/git/quizify/.stack-work/install/x86_64-osx/lts-13.10/8.6.3/lib/x86_64-osx-ghc-8.6.3/quizify-0.1-3YZxO61XxQF8MtmrEX8L7j-quizify-exe"
 dynlibdir  = "/Users/local/git/quizify/.stack-work/install/x86_64-osx/lts-13.10/8.6.3/lib/x86_64-osx-ghc-8.6.3"
 datadir    = "/Users/local/git/quizify/.stack-work/install/x86_64-osx/lts-13.10/8.6.3/share/x86_64-osx-ghc-8.6.3/quizify-0.1"
 libexecdir = "/Users/local/git/quizify/.stack-work/install/x86_64-osx/lts-13.10/8.6.3/libexec/x86_64-osx-ghc-8.6.3/quizify-0.1"
