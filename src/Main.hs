@@ -1,22 +1,45 @@
+{-# LANGUAGE OverloadedStrings #-}
 module Main where
 
-import System.Environment
-import System.Process (system)
 import qualified Config
+import           Data.Text          (Text)
+import qualified Data.Text          as Text
+import           Json
+import           System.Environment
+import           System.Process     (system)
+
+colorifyText :: String -> Text
+colorifyText color  = Text.pack $ (if head color /= '#' then "#" else "") <> color
+
+colorify :: String -> String
+colorify color  = (if head color /= '#' then "#" else "") <> color
 
 mogrify :: String -> String -> String -> String
 mogrify targetColor sourceColor mask =
     "mogrify -fill " ++ "'" ++ target ++ "'" ++ " -opaque " ++ "'" ++ source ++ "' " ++ mask
-  where target = (if head targetColor /= '#' then "#" else "") ++ targetColor
-        source = (if head sourceColor /= '#' then "#" else "") ++ sourceColor
+  where target = colorify targetColor
+        source = colorify sourceColor
+
+makeConfig :: String -> String -> String
+makeConfig accentColor lightOrDarkColor = show $ json
+    [ "accentColor"  |: str (colorifyText accentColor)
+    , "lightOrDark"  |: str (colorifyText lightOrDarkColor)
+    , "isRoundStyle" |: bool False
+    , "url"          |: "https://cyberforeman.com/"
+    , "api"          |: "api/basic"
+    ]
 
 quizify :: String -> Bool -> FilePath -> FilePath -> IO ()
-quizify accentColor isDark imageSource dist = system cmd >> putStrLn cmd >> pure ()
+quizify accentColor isDark imageSource dist = do
+    _ <- system cmd
+    writeFile
+        (dist ++ "../locales/config.yaml")
+        (makeConfig accentColor (if isDark then Config.darkColor else Config.lightColor))
   where
     distMask = dist ++ "/*.{jpg,png}"
     cmd = init . init . init $ concatMap (++ " && ")
         [ "echo 'Replacing colors, output to " ++ dist ++ " ...'"
-        , "mkdir -p " ++ dist ++ "/"
+        , "mkdir -p " ++ dist ++ "/ " ++ dist ++ "/.." ++ "/locales/"
         , "cp -r " ++ imageSource ++ "/ " ++ dist
         , mogrify accentColor Config.lightColor distMask
         , if not isDark
@@ -28,9 +51,9 @@ main :: IO ()
 main = do
     args <- getArgs
     case length args of
-        4 -> quizify (head args) (args !! 1 == "dark") (args !! 2) (args !! 3)
-        3 -> quizify (head args) (args !! 1 == "dark") "images" (args !! 2)
-        2 -> quizify (head args) True "images" (args !! 1)
+        4 -> quizify (head args) (args !! 1 == "dark") (args !! 2) (args !! 3 ++ "/images/")
+        3 -> quizify (head args) (args !! 1 == "dark") "images" (args !! 2 ++ "/images/")
+        2 -> quizify (head args) True "images" (args !! 1 ++ "/images/")
         1 ->
             let arg = head args
             in if any (== arg) [ "help", "-help", "--help" ]

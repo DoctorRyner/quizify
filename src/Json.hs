@@ -21,3 +21,9 @@ num = Json.Number
 
 json :: [Pair] -> ByteString
 json = BSLazy.toStrict . Json.encode . Json.object
+
+bool :: Bool -> Json.Value
+bool = Json.Bool
+
+(|:) :: Text -> Json.Value -> (Text, Json.Value)
+key |: val = (key, val)
