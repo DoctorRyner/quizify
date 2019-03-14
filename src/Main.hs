@@ -10,10 +10,10 @@ import           System.Environment
 import           System.Process     (system)
 
 colorifyText :: String -> Text
-colorifyText color  = Text.pack $ (if head color /= '#' then "#" else "") <> color
+colorifyText color = Text.pack $ (if head color /= '#' then "#" else "") <> color
 
 colorify :: String -> String
-colorify color  = (if head color /= '#' then "#" else "") <> color
+colorify color = (if head color /= '#' then "#" else "") <> color
 
 mogrify :: String -> String -> String -> String
 mogrify targetColor sourceColor mask =
@@ -22,12 +22,13 @@ mogrify targetColor sourceColor mask =
         source = colorify sourceColor
 
 makeConfig :: String -> String -> ByteString
-makeConfig accentColor lightOrDarkColor = json
+makeConfig accentColor _lightOrDarkColor = json
     [ "accentColor"  |: str (colorifyText accentColor)
-    , "lightOrDark"  |: str (colorifyText lightOrDarkColor)
+    -- , "lightOrDark"  |: str (colorifyText lightOrDarkColor)
+    , "lightOrDark"  |: str (colorifyText Config.darkColor)
     , "isRoundStyle" |: bool False
-    , "url"          |: "https://cyberforeman.com/"
-    , "api"          |: "api/basic"
+    -- , "url"          |: "https://cyberforeman.com/"
+    -- , "api"          |: "api/basic"
     ]
 
 quizify :: String -> Bool -> FilePath -> FilePath -> IO ()
@@ -45,7 +46,7 @@ quizify accentColor isDark imageSource dist = do
         , "cp -r " ++ imageSource ++ "/ " ++ dist
         , mogrify accentColor Config.lightColor distMask
         , if not isDark
-            then mogrify Config.lightColor Config.darkColor distMask
+            then mogrify Config.lightColor Config.darkColor distMask ++ " && echo 'FINISH!'"
             else "echo 'FINISH!'"
         ]
 
