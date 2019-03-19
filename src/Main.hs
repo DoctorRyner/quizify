@@ -33,12 +33,9 @@ makeConfig accentColor _lightOrDarkColor email = json
 quizify :: String -> Bool -> String -> FilePath -> FilePath -> FilePath -> IO ()
 quizify accentColor isDark email logoPath imageSource dist = do
     _ <- system cmd
-
+    _ <- system ("cp " ++ imageSource ++ "/../*.json " ++ dist ++ "../locales/")
     when (logoPath /= "") $
-        system ("cp " ++ imageSource ++ "/../*.json " ++ dist ++ "../locales/headerLogo.png")
-        >> pure ()
-
-    _ <- system $ "cp " ++ logoPath ++ " " ++ dist ++ "../images/"
+        system ("cp " ++ logoPath ++ " " ++ dist ++ "../images/headerLogo.png") >> pure ()
     Json.writeJson
         (dist ++ "../locales/config.json")
         (makeConfig
