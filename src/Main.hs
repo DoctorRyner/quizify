@@ -129,6 +129,8 @@ main = do
             , "where:\n"
             , "  - #fff: changeable accent color\n"
             , "  - light: quiz theme, can be light or dark\n"
+            , "  - test@test: notification email\n"
+            , "  - logo.png: company logo path to replace" 
             , "  - images/: source img path\n"
             , "  - dist/: output directory"
             ]
