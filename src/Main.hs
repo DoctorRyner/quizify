@@ -111,7 +111,18 @@ main = do
         _ -> showHelp
 
   where
-    template  = "The template: quizify <#color> <dark|light> <email> <logoPath> <sourcePath> <distPath>"
     help6Args = "6 args: quizify #fff light test@test logo.png images/ dist/"
-    helpMsg = template
-    showHelp  = putStrLn "Usage examples:\n\n4 args: quizify #fff light images/ dist/\n3 args: quizify #fff light dist/\n2 args: quizify #fff dist/\n1 arg:\n  - quizify #fff\n  - quizify help\n  - quizify -help\n  - quizify --help\n\nwhere:\n  - #fff: changeable accent color\n  - light: quiz theme, can be light or dark\n  - images/: source img path\n  - dist/: output directory"
+    help5Args = "5 args: quizify #fff light test@test images/ dist/"
+    help4Args = "4 args: quizify #fff light test@test dist/"
+    help3Args = "3 args: quizify #fff light test@test"
+    help2Args = "2 args: quizify #fff test@test"
+    help1Args = "1 arg:\n  - quizify #fff\n  - quizify help\n  - quizify -help\n  - quizify --help\n\nwhere:\n  - #fff: changeable accent color\n  - light: quiz theme, can be light or dark\n  - images/: source img path\n  - dist/: output directory"
+    showHelp = putStrLn $ concat
+        [ "Usage exampes:\n\n"
+        , help6Args ++ "\n"
+        , help5Args ++ "\n"
+        , help4Args ++ "\n"
+        , help3Args ++ "\n"
+        , help2Args ++ "\n"
+        , help1Args
+        ]
