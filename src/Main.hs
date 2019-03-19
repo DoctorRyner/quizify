@@ -34,8 +34,9 @@ quizify :: String -> Bool -> String -> FilePath -> FilePath -> FilePath -> IO ()
 quizify accentColor isDark email logoPath imageSource dist = do
     _ <- system cmd
 
-    when (logoPath /= "") $
-        system ("cp " ++ imageSource ++ "/../*.json " ++ dist ++ "../locales/") >> pure ()
+    when (logoPath /= "") $ do
+        system $ "cp " ++ imageSource ++ "/../*.json " ++ dist ++ "../locales/headerLogo.png"
+        pure ()
 
     _ <- system $ "cp " ++ logoPath ++ " " ++ dist ++ "../images/"
     Json.writeJson
