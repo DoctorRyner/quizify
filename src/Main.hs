@@ -35,7 +35,7 @@ quizify accentColor isDark email logoPath imageSource dist = do
     _ <- system cmd
 
     when (logoPath /= "") $ do
-        system $ "cp " ++ imageSource ++ "/../*.json " ++ dist ++ "../locales/headerLogo.png"
+        _ <- system $ "cp " ++ imageSource ++ "/../*.json " ++ dist ++ "../locales/headerLogo.png"
         pure ()
 
     _ <- system $ "cp " ++ logoPath ++ " " ++ dist ++ "../images/"
