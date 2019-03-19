@@ -34,6 +34,7 @@ makeConfig accentColor _lightOrDarkColor = json
 quizify :: String -> Bool -> FilePath -> FilePath -> IO ()
 quizify accentColor isDark imageSource dist = do
     _ <- system cmd
+    _ <- system $ "cp " ++ imageSource ++ "/../*.json " ++ dist ++ "../locales/"
     Json.writeJson
         (dist ++ "../locales/config.json")
         (makeConfig accentColor (if isDark then Config.darkColor else Config.lightColor)
