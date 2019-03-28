@@ -8,12 +8,13 @@ import qualified Data.ByteString          as BS
 import qualified Data.ByteString.Lazy     as BSLazy
 import           Data.Scientific          (Scientific)
 import           Data.Text                (Text)
+import           Data.Vector              as V
 
 obj :: [Pair] -> Json.Value
 obj = Json.object
 
-arr :: Json.Array -> Json.Value
-arr = Json.Array
+arr :: [Json.Value] -> Json.Value
+arr = Json.Array . V.fromList
 
 str :: Text -> Json.Value
 str = Json.String

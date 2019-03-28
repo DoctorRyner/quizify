@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c913a71607508b75d795cec0a5981d45e9795df2fcd9f82861313f3d93889e23
+-- hash: 72b6390dd1e411638cbe3dcff48446da0fbbf3551bf380d665074c30ad48d17b
 
 name:           quizify
 version:        0.1
@@ -33,4 +33,5 @@ executable quizify
     , process
     , scientific
     , text
+    , vector
   default-language: Haskell2010

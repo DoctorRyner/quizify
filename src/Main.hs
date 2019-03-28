@@ -28,6 +28,44 @@ makeConfig accentColor _lightOrDarkColor email = json
     , "lightOrDark"  |: str (colorifyText Config.darkColor)
     , "isRoundStyle" |: bool False
     , "email"        |: str email
+    , "content"      |: obj
+        [ "style" |: arr
+            [ "HighTech"
+            , "Classic"
+            , ""
+            , "Any"
+            , "MiniHouse"
+            , "Cottage"
+            , "Chalet"
+            ]
+        , "floor" |: arr
+            [ ""
+            , ""
+            , ""
+            , "Any"
+            , "1"
+            , "2"
+            ]
+        , "square" |: arr
+            [ obj [ "from" |: num 200, "to" |: num 999 ]
+            , obj [ "from" |: num   0, "to" |: num   0 ]
+            , obj [ "from" |: num   0, "to" |: num   0 ]
+            , obj [ "from" |: num  45, "to" |: num  90 ]
+            , obj [ "from" |: num  90, "to" |: num 135 ]
+            , obj [ "from" |: num 135, "to" |: num 170 ]
+            , obj [ "from" |: num 170, "to" |: num 200 ]
+            ]
+        , "garageOrCanopy" |: arr [ "Any" ]
+        , "material" |: arr
+            [ "Brick"
+            , ""
+            , ""
+            , "Any"
+            , "GasBlock"
+            , "GluedTimber"
+            , "WoodenFrame"
+            ]
+        ]
     ]
 
 quizify :: String -> Bool -> String -> FilePath -> FilePath -> FilePath -> IO ()
@@ -102,7 +140,7 @@ main = do
                 else quizify
                     (head args)
                     True
-                    "rg@kurbikus.digital"
+                    "sy@kurbikus.digital"
                     ""
                     "images/"
                     "dist/"

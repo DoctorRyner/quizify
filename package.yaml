@@ -10,6 +10,7 @@ dependencies:
 - text
 - scientific
 - process
+- vector
 
 executables:
   quizify:
