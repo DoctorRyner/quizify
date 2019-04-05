@@ -114,6 +114,7 @@ main = do
             (args !! 3) -- logoPath
             (args !! 4) -- imgSource
             (args !! 5 ++ "/images/") -- distPath
+
         5 -> quizify
             (head args)
             (args !! 1 == "dark")
@@ -125,10 +126,11 @@ main = do
         4 -> quizify
             (head args)
             (args !! 1 == "dark")
+            "test@test"
             (args !! 2)
-            ""
             "~/quiziy/images"
             (args !! 3 ++ "/images/")
+
         3 -> quizify
             (head args)
             (args !! 1 == "dark")
@@ -136,6 +138,7 @@ main = do
             ""
             "~/quizify/images"
             (args !! 2)
+
         2 -> quizify
             (head args)
             True
@@ -143,6 +146,7 @@ main = do
             ""
             "~/quizify/images"
             "dist/"
+
         1 ->
             let arg = head args
             in if any (== arg) [ "help", "-help", "--help" ]
@@ -154,6 +158,7 @@ main = do
                     ""
                     "images/"
                     "dist/"
+
         _ -> showHelp
 
   where
@@ -162,7 +167,7 @@ main = do
 
         , "6 args: quizify #fff light test@test logo.png images/ dist/\n"
         , "5 args: quizify #fff light test@test images/ dist/\n"
-        , "4 args: quizify #fff light test@test dist/\n"
+        , "4 args: quizify #fff light logo.png dist/\n"
         , "3 args: quizify #fff light dist/\n"
         , "2 args: quizify #fff test@test\n"
         , concat
