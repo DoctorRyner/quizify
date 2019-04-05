@@ -30,13 +30,12 @@ makeConfig accentColor _lightOrDarkColor email = json
     , "email"        |: str email
     , "content"      |: obj
         [ "style" |: arr
-            [ "HighTech"
-            , "Classic"
+            [ ""
+            , ""
             , ""
             , "Any"
-            , "MiniHouse"
-            , "Cottage"
-            , "Chalet"
+            , "Cubism"
+            , "Classic"
             ]
         , "floor" |: arr
             [ ""
@@ -47,23 +46,34 @@ makeConfig accentColor _lightOrDarkColor email = json
             , "2"
             ]
         , "square" |: arr
-            [ obj [ "from" |: num 200, "to" |: num 999 ]
+            [ obj [ "from" |: num   0, "to" |: num   0 ]
             , obj [ "from" |: num   0, "to" |: num   0 ]
             , obj [ "from" |: num   0, "to" |: num   0 ]
+            , obj [ "from" |: num 228, "to" |: num  69 ]
             , obj [ "from" |: num  45, "to" |: num  90 ]
             , obj [ "from" |: num  90, "to" |: num 135 ]
             , obj [ "from" |: num 135, "to" |: num 170 ]
             , obj [ "from" |: num 170, "to" |: num 200 ]
+            , obj [ "from" |: num 200, "to" |: num 999 ]
             ]
-        , "garageOrCanopy" |: arr [ "Any" ]
-        , "material" |: arr
-            [ "Brick"
+        , "garageOrCanopy" |: arr
+            [ ""
             , ""
             , ""
             , "Any"
+            , "Garage"
+            , "Canopy"
+            ]
+        , "material" |: arr
+            [ ""
+            , ""
+            , ""
+            , "Any"
+            , "WoodenFrame"
+            , "CeramicBlock"
+            , "Brick"
             , "GasBlock"
             , "GluedTimber"
-            , "WoodenFrame"
             ]
         ]
     ]
