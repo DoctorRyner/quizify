@@ -132,10 +132,10 @@ main = do
         3 -> quizify
             (head args)
             (args !! 1 == "dark")
-            (args !! 2)
+            "test@test"
             ""
             "~/quizify/images"
-            "dist/"
+            (args !! 2)
         2 -> quizify
             (head args)
             True
@@ -163,7 +163,7 @@ main = do
         , "6 args: quizify #fff light test@test logo.png images/ dist/\n"
         , "5 args: quizify #fff light test@test images/ dist/\n"
         , "4 args: quizify #fff light test@test dist/\n"
-        , "3 args: quizify #fff light test@test\n"
+        , "3 args: quizify #fff light dist/\n"
         , "2 args: quizify #fff test@test\n"
         , concat
             [ "1 arg:\n"
