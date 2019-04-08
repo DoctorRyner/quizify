@@ -128,7 +128,7 @@ main = do
             (args !! 1 == "dark")
             "test@test"
             (args !! 2)
-            "~/quiziy/images"
+            "~/git/quizify-resources/images"
             (args !! 3 ++ "/images/")
 
         3 -> quizify
@@ -136,7 +136,7 @@ main = do
             (args !! 1 == "dark")
             "test@test"
             ""
-            "~/quizify/images"
+            "~/git/quizify-resources/images"
             (args !! 2)
 
         2 -> quizify
@@ -144,7 +144,7 @@ main = do
             True
             (args !! 1)
             ""
-            "~/quizify/images"
+            "~/git/quizify-resources/images"
             "dist/"
 
         1 ->
